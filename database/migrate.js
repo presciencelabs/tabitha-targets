@@ -28,6 +28,7 @@ const target_tablenames_tbta = tbta_db.query(`
 `).all().map(({name}) => name)
 console.log('done.')
 
+console.log(`Transforming data from ${tbta_db_name}...`)
 const transformed_data = target_tablenames_tbta.map(table_name => tbta_db.query(`
 		SELECT Reference, Verse
 		FROM ${table_name}
