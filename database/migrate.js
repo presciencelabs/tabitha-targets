@@ -1,13 +1,15 @@
 import {Database} from 'bun:sqlite'
 
-const tbta_db_name = Bun.argv[2]
-const targets_db_name = Bun.argv[3]
-const tabitha_table_name = tbta_db_name.split('.')[0] // TBTA db becomes a table in Targets db
+// usage: `bun migrate.js English.YYYY-MM-DD.mdb.sqlite Targets.YYYY-MM-DD.tabitha.sqlite`
+const tbta_db_name = Bun.argv[2] // English.YYYY-MM-DD.mdb.sqlite
+const language = tbta_db_name.split('.')[0] // English
+const targets_db_name = Bun.argv[3] // Targets.YYYY-MM-DD.tabitha.sqlite
 
-console.log(`Creating ${tabitha_table_name} table in ${targets_db_name}...`)
+console.log(`Creating Text table in ${targets_db_name}...`)
 const targets_db = new Database(targets_db_name)
 targets_db.query(`
-	CREATE TABLE IF NOT EXISTS ${tabitha_table_name} (
+	CREATE TABLE IF NOT EXISTS Text (
+		language	TEXT,
 		book 		TEXT,
 		chapter 	INTEGER,
 		verse 	INTEGER,
@@ -54,19 +56,19 @@ function transform ({Reference, Verse}) {
 console.log('done.')
 
 
-console.log(`Cleaning existing data in ${tabitha_table_name}...`)
+console.log(`Cleaning existing data in Text...`)
 targets_db.query(`
-	DELETE FROM ${tabitha_table_name}
+	DELETE FROM Text
 `).run()
 console.log('done.')
 
 
-console.log(`Loading data into ${tabitha_table_name} table...`)
+console.log(`Loading data into Text table...`)
 transformed_data.map(async ({book, chapter, verse, text}) => {
 	targets_db.query(`
-		INSERT INTO ${tabitha_table_name} (book, chapter, verse, text)
-		VALUES (?, ?, ?, ?)
-	`).run(book, chapter, verse, text)
+		INSERT INTO Text (language, book, chapter, verse, text)
+		VALUES (?, ?, ?, ?, ?)
+	`).run(language, book, chapter, verse, text)
 
 	await Bun.write(Bun.stdout, '.')
 })
