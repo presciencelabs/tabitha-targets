@@ -44,11 +44,11 @@ function load_data(targets_db, language) {
 		[language, 'Noun', 'Plural', 1],
 		[language, 'Verb', 'Past', 1],
 		[language, 'Verb', 'Perfect', 2],
-		[language, 'Verb', 'Participle', 3]
+		[language, 'Verb', 'Participle', 3],
 		[language, 'Verb', 'Third Singular Present', 4],
 		[language, 'Adjective', 'Comparative', 1],
-		[language, 'Adjective', 'Superlative', 2]
-		[language, 'Adverb', 'Comparative', 1]
+		[language, 'Adjective', 'Superlative', 2],
+		[language, 'Adverb', 'Comparative', 1],
 		[language, 'Adverb', 'Superlative', 2]
 	]
 
