@@ -3,6 +3,7 @@ import {migrate_text_table} from './migrate_text_table'
 import {migrate_lexicon_table} from './migrate_lexicon_table'
 import {migrate_lexical_forms} from './migrate_lexical_forms'
 import {migrate_form_names_table} from './migrate_form_names_table'
+import {migrate_lexical_features_table} from './migrate_lexical_features_table'
 
 // usage: `bun migrate.js English.YYYY-MM-DD.mdb.sqlite Targets.YYYY-MM-DD.tabitha.sqlite`
 const tbta_db_name 		= Bun.argv[2] 						// English.YYYY-MM-DD.mdb.sqlite
@@ -19,6 +20,7 @@ migrate_text_table(tbta_db, language, targets_db)
 migrate_lexicon_table(tbta_db, language, targets_db)
 migrate_lexical_forms(language, targets_db)
 migrate_form_names_table(language, targets_db)
+migrate_lexical_features_table(language, targets_db)
 
 console.log(`Optimizing ${targets_db_name}...`)
 targets_db.query(`VACUUM`).run()
