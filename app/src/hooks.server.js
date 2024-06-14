@@ -22,16 +22,10 @@ export async function handle({ event, resolve }) {
 				throw new Error(`database missing from platform arg: ${JSON.stringify(event.platform)}`)
 			}
 		}
-		if (!event.platform?.env.DB_Targets_deprecated) {
-			if (!building) {
-				throw new Error(`database missing from platform arg: ${JSON.stringify(event.platform)}`)
-			}
-		}
 
 		// putting it on `locals` to clean up usage in routes
 		// @ts-ignore until the TODO above is resolved
 		event.locals.db = event.platform?.env.DB_Targets
-		event.locals.db_deprecated = event.platform?.env.DB_Targets_deprecated
 	}
 
 	// https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS

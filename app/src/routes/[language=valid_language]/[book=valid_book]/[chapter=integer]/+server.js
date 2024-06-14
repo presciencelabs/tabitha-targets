@@ -2,16 +2,17 @@
 import { error, json } from '@sveltejs/kit'
 
 /** @type {import('./$types').RequestHandler} */
-export async function GET({ locals: { db_deprecated }, params: { language, book, chapter } }) {
+export async function GET({ locals: { db }, params: { language, book, chapter } }) {
 	const sql = `
 		SELECT DISTINCT verse
-		FROM ${language}
-		WHERE book = ?
+		FROM Text
+		WHERE language = ?
+			AND book = ?
 			AND chapter = ?
 		ORDER BY verse
 	`
 	/** @type {import('@cloudflare/workers-types').D1Result<VerseResult>} https://developers.cloudflare.com/d1/platform/client-api/#return-object */
-	const { results } = await db_deprecated.prepare(sql).bind(book, chapter).all()
+	const { results } = await db.prepare(sql).bind(language, book, chapter).all()
 
 	if (results.length) {
 		return json(results.map(({ verse }) => verse))

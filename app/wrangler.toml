@@ -8,7 +8,3 @@ command = "pnpm build"
 binding = "DB_Targets"
 database_name = "Targets.2024-06-01"
 database_id = "61b2caee-ce7e-4449-8ee0-5648a362103a"
-[[d1_databases]]
-binding = "DB_Targets_deprecated"
-database_name = "Targets.2024-05-13"
-database_id = "16118743-31ca-4142-a3ce-e5928d3c23cb"
