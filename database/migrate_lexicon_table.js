@@ -33,7 +33,8 @@ function transform_tbta_data(tbta_db, language) {
 							Roots as stem,
 							'${singular_part_of_speech}' as part_of_speech,
 							Glosses as gloss,
-							Features as features
+							Features as features,
+							Constituents as constituents
 				FROM ${table_name}
 			`
 			return tbta_db.query(sql).all()
@@ -61,8 +62,9 @@ function create_tabitha_table(targets_db) {
 				language			TEXT,
 				stem				TEXT,
 				part_of_speech	TEXT,
-				gloss				INTEGER,
+				gloss				TEXT,
 				features			TEXT,
+				constituents	TEXT,
 				forms				TEXT
 			)
 		`).run()
@@ -83,11 +85,11 @@ function create_tabitha_table(targets_db) {
 function load_data(targets_db, transformed_data) {
 	console.log(`Loading data into Lexicon table...`)
 
-	transformed_data.map(async ({language, stem, part_of_speech, gloss, features}) => {
+	transformed_data.map(async ({language, stem, part_of_speech, gloss, features, constituents}) => {
 		targets_db.query(`
-			INSERT INTO Lexicon (language, stem, part_of_speech, gloss, features)
-			VALUES (?, ?, ?, ?, ?)
-		`).run(language, stem, part_of_speech, gloss, features)
+			INSERT INTO Lexicon (language, stem, part_of_speech, gloss, features, constituents)
+			VALUES (?, ?, ?, ?, ?, ?)
+		`).run(language, stem, part_of_speech, gloss.trim(), features, constituents)
 
 		await Bun.write(Bun.stdout, '.')
 	})

@@ -84,6 +84,9 @@ function output() {
 		return inflections.length > 0
 	}
 
+	// when "constituents" are involved, there will be extra rows in the export for the same "stem", e.g.,
+	//	'get', 'get off', 'get up', 'get on' are all representative of "get".  Since the each of these have
+	// all the same inflections, we can filter the extra forms out.
 	function has_no_space([stem]) {
 		return !stem.includes(' ')
 	}
