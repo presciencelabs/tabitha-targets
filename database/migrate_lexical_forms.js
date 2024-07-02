@@ -12,7 +12,12 @@ export async function migrate_lexical_forms(language, targets_db) {
 }
 
 /**
- * @typedef {{sequence_number: string, stem: string, part_of_speech: string, forms: string}} WordFormRecord
+ * @typedef {{
+ * 	sequence_number: string,
+ * 	stem: string,
+ * 	part_of_speech: string,
+ * 	forms: string
+ * }} WordFormRecord
  *
  * @returns {Promise<Record<['Adjective'|'Adverb'|'Noun'|'Verb'], WordFormRecord[]>>}
  */
@@ -36,7 +41,7 @@ async function get_word_forms() {
 
 		/**
 		 * @param {string} line should follow this pattern: sequence_number,stem,part_of_speech,forms
-		 * @returns {{sequence_number: string, stem: string, part_of_speech: string, forms: string}}
+		 * @returns {WordFormRecord}
 		 */
 		function transform(line) {
 			// note:  some stems are numbers, e.g., "7,1,100,Adjective,|||", so we can't just split(',')
@@ -64,12 +69,24 @@ async function get_word_forms() {
  * @param {import('bun:sqlite').Database} targets_db
  * @param {string} language
  * @returns {Promise<void>}
+ *
+ * @typedef {{
+ * 	id: number,
+ * 	language: string,
+ * 	stem: string,
+ * 	part_of_speech: string,
+ * 	gloss: string,
+ * 	features: string,
+ * 	constituents: string,
+ * 	forms: string
+ * }} LexiconRecord
  */
 async function load_data(word_forms, targets_db, language) {
 	console.log(`Loading word forms into Lexicon table...`)
 
 	for (const part_of_speech of Object.keys(word_forms)) {
-		const lexicon_words = await targets_db.query(`
+		/** @type {LexiconRecord[]} */
+		const lexicon_words = targets_db.query(`
 			SELECT *
 			FROM Lexicon
 			WHERE language = ?
@@ -77,26 +94,39 @@ async function load_data(word_forms, targets_db, language) {
 			ORDER BY id
 		`).all(language, part_of_speech)
 
-		for (const { stem: stem_from_word_forms, sequence_number, forms } of word_forms[part_of_speech]) {
-			const { id: lexicon_id, stem: stem_from_lexicon } = lexicon_words[sequence_number - 1]
+		for (const from_word_forms of word_forms[part_of_speech]) {
+			const from_lexicon = lexicon_words[from_word_forms.sequence_number - 1]
 
-			if (! stem_from_word_forms.startsWith(stem_from_lexicon)) {
-				console.log(`⚠️ NOT LOADED ⚠️ due to mismatch: ${stem_from_word_forms} (from word forms) vs ${stem_from_lexicon} (from lexicon)`)
-
-				continue
+			if (is_match({ from_word_forms, from_lexicon })) {
+				await targets_db.query(`
+					UPDATE Lexicon
+					SET forms = ?
+					WHERE language = ?
+						AND part_of_speech = ?
+						AND id = ?
+				`).run(from_word_forms.forms, language, part_of_speech, from_lexicon.id)
+			} else {
+				console.log(`⚠️ NOT LOADED ⚠️ due to mismatch: ${from_word_forms.stem} (from word forms) vs ${from_lexicon.stem} (from lexicon)`)
 			}
-
-			await targets_db.query(`
-				UPDATE Lexicon
-				SET forms = ?
-				WHERE language = ?
-					AND part_of_speech = ?
-					AND id = ?
-			`).run(forms, language, part_of_speech, lexicon_id)
 
 			await Bun.write(Bun.stdout, '.')
 		}
 	}
 
 	console.log('done.')
+
+	/**
+	 * @param {{
+	 * 	from_word_forms: WordFormRecord,
+	 * 	from_lexicon: LexiconRecord
+	 * }}
+	 * @returns {boolean}
+	 */
+	function is_match({ from_word_forms, from_lexicon }) {
+		// constituent data, when present, follows the format "constituent[hints]"
+		const constituent = from_lexicon.constituents.split('[')?.[0]
+		const stem_from_lexicon = constituent ? `${from_lexicon.stem} ${constituent}` : from_lexicon.stem
+
+		return from_word_forms.stem === stem_from_lexicon
+	}
 }
