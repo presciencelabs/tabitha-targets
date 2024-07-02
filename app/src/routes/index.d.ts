@@ -1,3 +1,3 @@
 type LanguageResult = {
-	name: string
+	language: string
 }
