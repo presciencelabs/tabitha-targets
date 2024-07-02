@@ -52,72 +52,37 @@ line_reader.on('close', output)
 //				43.  greatly
 //					Comparative: greater   (suppletive)
 //					Superlative: greatest   (suppletive)
+//			Adjectives
+//				109.  able
+//					Comparative: able  more
+//					Superlative: able  most
+//				110.  about
+//					Comparative:
+//					Superlative:
+
+/** @param {string} line */
 function extract(line) {
 	if (!line) return
 
-	const CHECK_FOR_STEM = /^\d+\.\s+(.+)$/
-	const CHECK_FOR_INFLECTION = /^\s+.*:\s+(.+)$/
+	const MATCH_STEM_LINE = /^(\d+)\.\s+(.+)$/
+	const [, sequence_number, stem] = line.match(MATCH_STEM_LINE) ?? []
+	if (sequence_number) {
+		const key = `${sequence_number}:${stem}`
 
-	const stem = line.match(CHECK_FOR_STEM)?.[1]
-	const inflection = line.match(CHECK_FOR_INFLECTION)?.[1]
-
-	if (stem) {
-		extracted_data.set(stem, [])
-	} else if (inflection) {
-		const last_stem = [...extracted_data.keys()].at(-1)
-		const ADDITIONAL_INFO = / {3}\(\w+\)/ // e.g.,   (suppletive)
-		const normalized_inflection = inflection.replace(ADDITIONAL_INFO, '')
-
-		extracted_data.get(last_stem).push(normalized_inflection)
+		return extracted_data.set(key, [])
 	}
+
+	const inflection = line.split(':')[1].trim()
+	const last_key = [...extracted_data.keys()].at(-1)
+	const ADDITIONAL_INFO = / {3}\(\w+\)/ // e.g.,   (suppletive)
+	const normalized_inflection = inflection.replace(ADDITIONAL_INFO, '')
+
+	extracted_data.get(last_key).push(normalized_inflection)
 }
 
 function output() {
-	Array.from(extracted_data)
-		.filter(has_inflections)
-		.filter(has_no_space)
-		.map(add_missing_inflections)
-		.concat(add_missing_words())
-		.map(log_csv)
-
-	function has_inflections([, inflections]) {
-		return inflections.length > 0
-	}
-
-	// when "constituents" are involved, there will be extra rows in the export for the same "stem", e.g.,
-	//	'get', 'get off', 'get up', 'get on' are all representative of "get".  Since the each of these have
-	// all the same inflections, we can filter the extra forms out.
-	function has_no_space([stem]) {
-		return !stem.includes(' ')
-	}
-
-	function add_missing_inflections([stem, inflections]) {
-		if (stem === 'be') {
-			// these forms are not present in TBTA's lexical data because be is so irregular...
-			// they are only produced during the rules phase so they need to be added manually here.
-			inflections.push('am', 'are', 'were')
-		}
-
-		return [stem, inflections]
-	}
-
-	function add_missing_words() {
-		// TODO add more or remove some when we include Analyzer inflections as well
-		// see https://github.com/presciencelabs/tabitha-editor/issues/37
-		const missing_words = {
-			Adjective: [
-				['left', ['','']],	// important for disambiguation with 'leave'
-			],
-			Verb: [
-				['goodbye', ['goodbied','goodbied','goodbying','goodbyes']],
-				['pity', ['pitied','pitied','pitying','pities']],
-				['sex', ['sexed','sexed','sexing','sexes']],
-			],
-		}
-		return missing_words[part_of_speech] || []
-	}
-
-	function log_csv([stem, inflections]) {
-		console.log(`${stem},${part_of_speech},|${inflections.join('|')}|`)
+	for (const [key, inflections] of extracted_data) {
+		const [sequence_number, stem] = key.split(':')
+		console.log(`${sequence_number},${stem},${part_of_speech},|${inflections.join('|')}|`)
 	}
 }

@@ -1,248 +1,646 @@
-able,Adjective,|able  more|able  most|
-afraid,Adjective,|afraid  more|afraid  most|
-alert,Adjective,|alert  more|alert  most|
-alive,Adjective,|alive  more|alive  most|
-amazed,Adjective,|amazed  more|amazed  most|
-angry,Adjective,|angrier|angriest|
-arrogant,Adjective,|arrogant  more|arrogant  most|
-ashamed,Adjective,|ashamed  more|ashamed  most|
-attracted,Adjective,|attracted  more|attracted  most|
-attractive,Adjective,|attractive  more|attractive  most|
-awake,Adjective,|awake  more|awake  most|
-awesome,Adjective,|awesome  more|awesome  most|
-bad,Adjective,|worse|worst|
-barren,Adjective,|barren  more|barren  most|
-beautiful,Adjective,|beautiful  more|beautiful  most|
-big,Adjective,|bigger|biggest|
-bitter,Adjective,|bitter  more|bitter  most|
-black,Adjective,|blacker|blackest|
-blameless,Adjective,|blameless  more|blameless  most|
-blind,Adjective,|blinder|blindest|
-blue,Adjective,|blue  more|blue  most|
-brave,Adjective,|braver|bravest|
-bright,Adjective,|brighter|brightest|
-calm,Adjective,|calm  more|calm  most|
-careful,Adjective,|careful  more|careful  most|
-clean,Adjective,|cleaner|cleanest|
-clever,Adjective,|clever  more|clever  most|
-close,Adjective,|closer|closest|
-cold,Adjective,|colder|coldest|
-comfortable,Adjective,|comfortable  more|comfortable  most|
-common,Adjective,|common  more|common  most|
-compassionate,Adjective,|compassionate  more|compassionate  most|
-complicated,Adjective,|complicated  more|complicated  most|
-confident,Adjective,|confident  more|confident  most|
-confused,Adjective,|confused  more|confused  most|
-conscious,Adjective,|conscious  more|conscious  most|
-content,Adjective,|content  more|content  most|
-cool,Adjective,|cooler|coolest|
-correct,Adjective,|correct  more|correct  most|
-corrupt,Adjective,|corrupt  more|corrupt  most|
-courageous,Adjective,|courageous  more|courageous  most|
-crazy,Adjective,|crazier|craziest|
-crippled,Adjective,|crippled  more|crippled  most|
-cruel,Adjective,|crueler|cruelest|
-dangerous,Adjective,|dangerous  more|dangerous  most|
-dark,Adjective,|darker|darkest|
-dead,Adjective,|deader|deadest|
-deaf,Adjective,|deafer|deafest|
-deep,Adjective,|deeper|deepest|
-delicious,Adjective,|delicious  more|delicious  most|
-detestable,Adjective,|detestable  more|detestable  most|
-difficult,Adjective,|difficult  more|difficult  most|
-dirty,Adjective,|dirtier|dirtiest|
-discouraged,Adjective,|discouraged  more|discouraged  most|
-drunk,Adjective,|drunk  more|drunk  most|
-dry,Adjective,|drier|driest|
-early,Adjective,|earlier|earliest|
-easy,Adjective,|easier|easiest|
-empty,Adjective,|empty  more|empty  most|
-evil,Adjective,|evil  more|evil  most|
-excellent,Adjective,|excellent  more|excellent  most|
-excited,Adjective,|excited  more|excited  most|
-expensive,Adjective,|expensive  more|expensive  most|
-extraordinary,Adjective,|extraordinary  more|extraordinary  most|
-fair,Adjective,|fairer|fairest|
-faithful,Adjective,|faithful  more|faithful  most|
-false,Adjective,|false  more|false  most|
-famous,Adjective,|famous  more|famous  most|
-far,Adjective,|further|furthest|
-fast,Adjective,|faster|fastest|
-fat,Adjective,|fatter|fattest|
-fertile,Adjective,|fertile  more|fertile  most|
-few,Adjective,|fewer|fewest|
-fierce,Adjective,|fiercer|fiercest|
-flat,Adjective,|flatter|flattest|
-foolish,Adjective,|foolish  more|foolish  most|
-fortified,Adjective,|fortified  more|fortified  most|
-fortunate,Adjective,|fortunate  more|fortunate  most|
-free,Adjective,|free  more|free  most|
-fresh,Adjective,|fresher|freshest|
-friendly,Adjective,|friendlier|friendliest|
-fruitful,Adjective,|fruitful  more|fruitful  most|
-full,Adjective,|fuller|fullest|
-generous,Adjective,|generous  more|generous  most|
-gentle,Adjective,|gentle  more|gentle  most|
-glad,Adjective,|glad  more|glad  most|
-glorious,Adjective,|glorious  more|glorious  most|
-good,Adjective,|better|best|
-gracious,Adjective,|gracious  more|gracious  most|
-gray,Adjective,|grayer|grayest|
-great,Adjective,|greater|greatest|
-greedy,Adjective,|greedy  more|greedy  most|
-green,Adjective,|greener|greenest|
-guilty,Adjective,|guilty  more|guilty  most|
-handsome,Adjective,|handsome  more|handsome  most|
-happy,Adjective,|happier|happiest|
-hard,Adjective,|harder|hardest|
-healthy,Adjective,|healthier|healthiest|
-heavy,Adjective,|heavier|heaviest|
-high,Adjective,|higher|highest|
-holy,Adjective,|holier|holiest|
-honest,Adjective,|honest  more|honest  most|
-horizontal,Adjective,|horizontal  more|horizontal  most|
-hot,Adjective,|hotter|hottest|
-human,Adjective,|human  more|human  most|
-humble,Adjective,|humble  more|humble  most|
-hungry,Adjective,|hungrier|hungriest|
-important,Adjective,|important  more|important  most|
-impure,Adjective,|impure  more|impure  most|
-infectious,Adjective,|infectious  more|infectious  most|
-inner,Adjective,|inner  more|inner  most|
-innocent,Adjective,|innocent  more|innocent  most|
-intelligent,Adjective,|intelligent  more|intelligent  most|
-interested,Adjective,|interested  more|interested  most|
-interesting,Adjective,|interesting  more|interesting  most|
-jealous,Adjective,|jealous  more|jealous  most|
-Jewish,Adjective,|Jewish  more|Jewish  most|
-joyful,Adjective,|joyful  more|joyful  most|
-just,Adjective,|just  more|just  most|
-kind,Adjective,|kinder|kindest|
-lame,Adjective,|lame  more|lame  most|
-late,Adjective,|later|latest|
-lazy,Adjective,|lazier|laziest|
-light,Adjective,|lighter|lightest|
-living,Adjective,|living  more|living  most|
-lonely,Adjective,|lonelier|loneliest|
-long,Adjective,|longer|longest|
-lost,Adjective,|lost  more|lost  most|
-loud,Adjective,|louder|loudest|
-low,Adjective,|lower|lowest|
-loyal,Adjective,|loyal  more|loyal  most|
-lucky,Adjective,|lucky  more|lucky  most|
-mature,Adjective,|mature  more|mature  most|
-merciful,Adjective,|merciful  more|merciful  most|
-miserable,Adjective,|miserable  more|miserable  most|
-mute,Adjective,|mute  more|mute  most|
-naked,Adjective,|naked  more|naked  most|
-narrow,Adjective,|narrower|narrowest|
-new,Adjective,|newer|newest|
-noble,Adjective,|nobler|noblest|
-noisy,Adjective,|noisier|noisiest|
-normal,Adjective,|normal  more|normal  most|
-old,Adjective,|older|oldest|
-open,Adjective,|open  more|open  most|
-ordinary,Adjective,|ordinarier|ordinariest|
-overwhelmed,Adjective,|overwhelmed  more|overwhelmed  most|
-paralyzed,Adjective,|paralyzed  more|paralyzed  most|
-patient,Adjective,|patient  more|patient  most|
-peaceful,Adjective,|peaceful  more|peaceful  most|
-perfect,Adjective,|perfect  more|perfect  most|
-perverse,Adjective,|perverse  more|perverse  most|
-pleasant,Adjective,|pleasant  more|pleasant  most|
-pleased,Adjective,|pleased  more|pleased  most|
-poisonous,Adjective,|poisonous  more|poisonous  most|
-poor,Adjective,|poorer|poorest|
-powerful,Adjective,|powerful  more|powerful  most|
-precious,Adjective,|precious  more|precious  most|
-pregnant,Adjective,|pregnant  more|pregnant  most|
-prosperous,Adjective,|prosperous  more|prosperous  most|
-proud,Adjective,|prouder|proudest|
-prudent,Adjective,|prudent  more|prudent  most|
-public,Adjective,|public  more|public  most|
-pure,Adjective,|purer|purest|
-quiet,Adjective,|quiet  more|quiet  most|
-raw,Adjective,|rawer|rawest|
-ready,Adjective,|readier|readiest|
-real,Adjective,|real  more|real  most|
-rebellious,Adjective,|rebellious  more|rebellious  most|
-red,Adjective,|redder|reddest|
-religious,Adjective,|religious  more|religious  most|
-responsible,Adjective,|responsible  more|responsible  most|
-rich,Adjective,|richer|richest|
-righteous,Adjective,|righteous  more|righteous  most|
-ripe,Adjective,|riper|ripest|
-rough,Adjective,|rougher|roughest|
-rude,Adjective,|ruder|rudest|
-sacred,Adjective,|sacred  more|sacred  most|
-sad,Adjective,|sadder|saddest|
-safe,Adjective,|safer|safest|
-satisfied,Adjective,|satisfied  more|satisfied  most|
-selfish,Adjective,|selfish  more|selfish  most|
-sensible,Adjective,|sensible  more|sensible  most|
-serious,Adjective,|serious  more|serious  most|
-severe,Adjective,|severe  more|severe  most|
-shallow,Adjective,|shallower|shallowest|
-sharp,Adjective,|sharper|sharpest|
-shiny,Adjective,|shinier|shiniest|
-short,Adjective,|shorter|shortest|
-shriveled,Adjective,|shriveled  more|shriveled  most|
-sick,Adjective,|sicker|sickest|
-silent,Adjective,|silent  more|silent  most|
-similar,Adjective,|similar  more|similar  most|
-simple,Adjective,|simpler|simplest|
-sincere,Adjective,|sincere  more|sincere  most|
-sinful,Adjective,|sinful  more|sinful  most|
-sleepy,Adjective,|sleepier|sleepiest|
-slow,Adjective,|slower|slowest|
-small,Adjective,|smaller|smallest|
-smooth,Adjective,|smoother|smoothest|
-soft,Adjective,|softer|softest|
-solid,Adjective,|solid  more|solid  most|
-sore,Adjective,|sore  more|sore  most|
-sorry,Adjective,|sorry  more|sorry  most|
-sour,Adjective,|sour  more|sour  most|
-special,Adjective,|special  more|special  most|
-steep,Adjective,|steeper|steepest|
-straight,Adjective,|straighter|straightest|
-strange,Adjective,|stranger|strangest|
-strict,Adjective,|stricter|strictest|
-strong,Adjective,|stronger|strongest|
-stubborn,Adjective,|stubborn  more|stubborn  most|
-stupid,Adjective,|stupid  more|stupid  most|
-successful,Adjective,|successful  more|successful  most|
-surprised,Adjective,|surprised  more|surprised  most|
-sweet,Adjective,|sweeter|sweetest|
-tall,Adjective,|taller|tallest|
-terrible,Adjective,|terrible  more|terrible  most|
-terrified,Adjective,|terrified  more|terrified  most|
-thick,Adjective,|thicker|thickest|
-thin,Adjective,|thinner|thinnest|
-thirsty,Adjective,|thirsty  more|thirsty  most|
-thorny,Adjective,|thornier|thorniest|
-tired,Adjective,|tired  more|tired  most|
-troubled,Adjective,|troubled  more|troubled  most|
-true,Adjective,|truer|truest|
-ugly,Adjective,|uglier|ugliest|
-unclean,Adjective,|unclean  more|unclean  most|
-unrighteous,Adjective,|unrighteous  more|unrighteous  most|
-upset,Adjective,|upset  more|upset  most|
-useful,Adjective,|useful  more|useful  most|
-useless,Adjective,|useless  more|useless  most|
-valuable,Adjective,|valuable  more|valuable  most|
-violent,Adjective,|violent  more|violent  most|
-warm,Adjective,|warmer|warmest|
-weak,Adjective,|weaker|weakest|
-well,Adjective,|weller|wellest|
-wet,Adjective,|wetter|wettest|
-white,Adjective,|whiter|whitest|
-wicked,Adjective,|wicked  more|wicked  most|
-wide,Adjective,|wider|widest|
-wild,Adjective,|wilder|wildest|
-willing,Adjective,|willing  more|willing  most|
-wise,Adjective,|wiser|wisest|
-wonderful,Adjective,|wonderful  more|wonderful  most|
-worthless,Adjective,|worthless  more|worthless  most|
-worthy,Adjective,|worthy  more|worthy  most|
-young,Adjective,|younger|youngest|
-left,Adjective,|||
+1, ,Adjective,|||
+2,1,Adjective,|||
+3,10,Adjective,|||
+4,1005,Adjective,|||
+5,1,017,Adjective,|||
+6,1,052,Adjective,|||
+7,1,100,Adjective,|||
+8,112,Adjective,|||
+9,118,Adjective,|||
+10,11th,Adjective,|||
+11,12,Adjective,|||
+12,1,200,Adjective,|||
+13,122,Adjective,|||
+14,123,Adjective,|||
+15,1,247,Adjective,|||
+16,1,254,Adjective,|||
+17,128,Adjective,|||
+18,138,Adjective,|||
+19,1,400,Adjective,|||
+20,148,Adjective,|||
+21,15,Adjective,|||
+22,16,000,Adjective,|||
+23,170,Adjective,|||
+24,172,Adjective,|||
+25,18,Adjective,|||
+26,188,Adjective,|||
+27,2,Adjective,|||
+28,20,Adjective,|||
+29,2,067,Adjective,|||
+30,21,Adjective,|||
+31,2,172,Adjective,|||
+32,2,322,Adjective,|||
+33,24,Adjective,|||
+34,242,Adjective,|||
+35,245,Adjective,|||
+36,25,Adjective,|||
+37,2.5,Adjective,|||
+38,25th,Adjective,|||
+39,26,Adjective,|||
+40,275,Adjective,|||
+41,276,Adjective,|||
+42,28,Adjective,|||
+43,2,818,Adjective,|||
+44,284,Adjective,|||
+45,3,Adjective,|||
+46,30,Adjective,|||
+47,320,Adjective,|||
+48,324,Adjective,|||
+49,328,Adjective,|||
+50,3,300,Adjective,|||
+51,340,Adjective,|||
+52,372,Adjective,|||
+53,39,Adjective,|||
+54,392,Adjective,|||
+55,3,930,Adjective,|||
+56,4,Adjective,|||
+57,40,Adjective,|||
+58,42,360,Adjective,|||
+59,43,Adjective,|||
+60,435,Adjective,|||
+61,44,000,Adjective,|||
+62,4.6,Adjective,|||
+63,46,Adjective,|||
+64,460,Adjective,|||
+65,468,Adjective,|||
+66,47,Adjective,|||
+67,480,Adjective,|||
+68,5,Adjective,|||
+69,50,Adjective,|||
+70,50,000,Adjective,|||
+71,50th,Adjective,|||
+72,52,Adjective,|||
+73,53,Adjective,|||
+74,530,Adjective,|||
+75,550,Adjective,|||
+76,56,Adjective,|||
+77,5.7,Adjective,|||
+78,6,Adjective,|||
+79,621,Adjective,|||
+80,628,Adjective,|||
+81,642,Adjective,|||
+82,648,Adjective,|||
+83,652,Adjective,|||
+84,655,Adjective,|||
+85,666,Adjective,|||
+86,667,Adjective,|||
+87,67,Adjective,|||
+88,6,720,Adjective,|||
+89,7,Adjective,|||
+90,721,Adjective,|||
+91,73,Adjective,|||
+92,7,337,Adjective,|||
+93,736,Adjective,|||
+94,74,Adjective,|||
+95,743,Adjective,|||
+96,760,Adjective,|||
+97,78,Adjective,|||
+98,8,Adjective,|||
+99,80,000,Adjective,|||
+100,822,Adjective,|||
+101,8.4,Adjective,|||
+102,845,Adjective,|||
+103,8.5,Adjective,|||
+104,9,Adjective,|||
+105,91,Adjective,|||
+106,928,Adjective,|||
+107,95,Adjective,|||
+108,973,Adjective,|||
+109,able,Adjective,|able  more|able  most|
+110,about,Adjective,|||
+111,afraid,Adjective,|afraid  more|afraid  most|
+112,alert,Adjective,|alert  more|alert  most|
+113,alive,Adjective,|alive  more|alive  most|
+114,all,Adjective,|||
+115,almost,Adjective,|||
+116,alone,Adjective,|||
+117,a lot of,Adjective,|||
+118,amazed,Adjective,|amazed  more|amazed  most|
+119,angry,Adjective,|angrier|angriest|
+120,another,Adjective,|||
+121,any,Adjective,|||
+122,appropriate,Adjective,|||
+123,arrogant,Adjective,|arrogant  more|arrogant  most|
+124,ashamed,Adjective,|ashamed  more|ashamed  most|
+125,a tithe,Adjective,|||
+126,attracted,Adjective,|attracted  more|attracted  most|
+127,attractive,Adjective,|attractive  more|attractive  most|
+128,awake,Adjective,|awake  more|awake  most|
+129,awesome,Adjective,|awesome  more|awesome  most|
+130,bad,Adjective,|worse|worst|
+131,barren,Adjective,|barren  more|barren  most|
+132,beautiful,Adjective,|beautiful  more|beautiful  most|
+133,big,Adjective,|bigger|biggest|
+134,bitter,Adjective,|bitter  more|bitter  most|
+135,black,Adjective,|blacker|blackest|
+136,blameless,Adjective,|blameless  more|blameless  most|
+137,blind,Adjective,|blinder|blindest|
+138,blue,Adjective,|blue  more|blue  most|
+139,both,Adjective,|||
+140,bottom,Adjective,|||
+141,brave,Adjective,|braver|bravest|
+142,bright,Adjective,|brighter|brightest|
+143,calm,Adjective,|calm  more|calm  most|
+144,careful,Adjective,|careful  more|careful  most|
+145,certain,Adjective,|||
+146,chief,Adjective,|||
+147,clean,Adjective,|cleaner|cleanest|
+148,clever,Adjective,|clever  more|clever  most|
+149,close,Adjective,|closer|closest|
+150,cold,Adjective,|colder|coldest|
+151,comfortable,Adjective,|comfortable  more|comfortable  most|
+152,common,Adjective,|common  more|common  most|
+153,compassionate,Adjective,|compassionate  more|compassionate  most|
+154,complicated,Adjective,|complicated  more|complicated  most|
+155,confident,Adjective,|confident  more|confident  most|
+156,confused,Adjective,|confused  more|confused  most|
+157,conscious,Adjective,|conscious  more|conscious  most|
+158,content,Adjective,|content  more|content  most|
+159,cool,Adjective,|cooler|coolest|
+160,correct,Adjective,|correct  more|correct  most|
+161,corrupt,Adjective,|corrupt  more|corrupt  most|
+162,courageous,Adjective,|courageous  more|courageous  most|
+163,crazy,Adjective,|crazier|craziest|
+164,crippled,Adjective,|crippled  more|crippled  most|
+165,cruel,Adjective,|crueler|cruelest|
+166,dangerous,Adjective,|dangerous  more|dangerous  most|
+167,dark,Adjective,|darker|darkest|
+168,dead,Adjective,|deader|deadest|
+169,deaf,Adjective,|deafer|deafest|
+170,deep,Adjective,|deeper|deepest|
+171,delicious,Adjective,|delicious  more|delicious  most|
+172,detestable,Adjective,|detestable  more|detestable  most|
+173,different,Adjective,|||
+174,difficult,Adjective,|difficult  more|difficult  most|
+175,dirty,Adjective,|dirtier|dirtiest|
+176,discouraged,Adjective,|discouraged  more|discouraged  most|
+177,drunk,Adjective,|drunk  more|drunk  most|
+178,dry,Adjective,|drier|driest|
+179,each,Adjective,|||
+180,early,Adjective,|earlier|earliest|
+181,eastern,Adjective,|||
+182,easy,Adjective,|easier|easiest|
+183,Egyptian,Adjective,|||
+184,eight,Adjective,|||
+185,eighteen,Adjective,|||
+186,eighteenth,Adjective,|||
+187,eighth,Adjective,|||
+188,eight tenths,Adjective,|||
+189,eighty four,Adjective,|||
+190,empty,Adjective,|empty  more|empty  most|
+191,enough,Adjective,|||
+192,equal,Adjective,|||
+193,eternal,Adjective,|||
+194,every,Adjective,|||
+195,evil,Adjective,|evil  more|evil  most|
+196,exactly,Adjective,|||
+197,excellent,Adjective,|excellent  more|excellent  most|
+198,except,Adjective,|||
+199,excited,Adjective,|excited  more|excited  most|
+200,expensive,Adjective,|expensive  more|expensive  most|
+201,extra,Adjective,|||
+202,extraordinary,Adjective,|extraordinary  more|extraordinary  most|
+203,fair,Adjective,|fairer|fairest|
+204,faithful,Adjective,|faithful  more|faithful  most|
+205,false,Adjective,|false  more|false  most|
+206,famous,Adjective,|famous  more|famous  most|
+207,far,Adjective,|further|furthest|
+208,fast,Adjective,|faster|fastest|
+209,fat,Adjective,|fatter|fattest|
+210,female,Adjective,|||
+211,fertile,Adjective,|fertile  more|fertile  most|
+212,few,Adjective,|fewer|fewest|
+213,fierce,Adjective,|fiercer|fiercest|
+214,fifteen,Adjective,|||
+215,fifteenth,Adjective,|||
+216,fifth,Adjective,|||
+217,fifty,Adjective,|||
+218,first,Adjective,|||
+219,firstborn,Adjective,|||
+220,five,Adjective,|||
+221,five hundred,Adjective,|||
+222,five thousand,Adjective,|||
+223,flat,Adjective,|flatter|flattest|
+224,flint,Adjective,|||
+225,following,Adjective,|||
+226,foolish,Adjective,|foolish  more|foolish  most|
+227,foreign,Adjective,|||
+228,formless,Adjective,|||
+229,fortified,Adjective,|fortified  more|fortified  most|
+230,fortunate,Adjective,|fortunate  more|fortunate  most|
+231,forty,Adjective,|||
+232,forty-seven,Adjective,|||
+233,forty nine,Adjective,|||
+234,four,Adjective,|||
+235,fourteenth,Adjective,|||
+236,fourth,Adjective,|||
+237,free,Adjective,|free  more|free  most|
+238,fresh,Adjective,|fresher|freshest|
+239,friendly,Adjective,|friendlier|friendliest|
+240,fruitful,Adjective,|fruitful  more|fruitful  most|
+241,full,Adjective,|fuller|fullest|
+242,generous,Adjective,|generous  more|generous  most|
+243,gentle,Adjective,|gentle  more|gentle  most|
+244,glad,Adjective,|glad  more|glad  most|
+245,glorious,Adjective,|glorious  more|glorious  most|
+246,good,Adjective,|better|best|
+247,gracious,Adjective,|gracious  more|gracious  most|
+248,gray,Adjective,|grayer|grayest|
+249,great,Adjective,|greater|greatest|
+250,greedy,Adjective,|greedy  more|greedy  most|
+251,green,Adjective,|greener|greenest|
+252,guilty,Adjective,|guilty  more|guilty  most|
+253,half,Adjective,|||
+254,handsome,Adjective,|handsome  more|handsome  most|
+255,happy,Adjective,|happier|happiest|
+256,hard,Adjective,|harder|hardest|
+257,healthy,Adjective,|healthier|healthiest|
+258,heavy,Adjective,|heavier|heaviest|
+259,high,Adjective,|higher|highest|
+260,holy,Adjective,|holier|holiest|
+261,honest,Adjective,|honest  more|honest  most|
+262,horizontal,Adjective,|horizontal  more|horizontal  most|
+263,hot,Adjective,|hotter|hottest|
+264,how many,Adjective,|||
+265,how much,Adjective,|||
+266,human,Adjective,|human  more|human  most|
+267,humble,Adjective,|humble  more|humble  most|
+268,hundreds,Adjective,|||
+269,hungry,Adjective,|hungrier|hungriest|
+270,important,Adjective,|important  more|important  most|
+271,impure,Adjective,|impure  more|impure  most|
+272,infectious,Adjective,|infectious  more|infectious  most|
+273,inner,Adjective,|inner  more|inner  most|
+274,innocent,Adjective,|innocent  more|innocent  most|
+275,intelligent,Adjective,|intelligent  more|intelligent  most|
+276,interested,Adjective,|interested  more|interested  most|
+277,interesting,Adjective,|interesting  more|interesting  most|
+278,jealous,Adjective,|jealous  more|jealous  most|
+279,Jewish,Adjective,|Jewish  more|Jewish  most|
+280,joyful,Adjective,|joyful  more|joyful  most|
+281,just,Adjective,|just  more|just  most|
+282,kind,Adjective,|kinder|kindest|
+283,lame,Adjective,|lame  more|lame  most|
+284,last,Adjective,|||
+285,late,Adjective,|later|latest|
+286,lazy,Adjective,|lazier|laziest|
+287,left,Adjective,|||
+288,less,Adjective,|||
+289,light,Adjective,|lighter|lightest|
+290,little,Adjective,|||
+291,living,Adjective,|living  more|living  most|
+292,lonely,Adjective,|lonelier|loneliest|
+293,long,Adjective,|longer|longest|
+294,lost,Adjective,|lost  more|lost  most|
+295,loud,Adjective,|louder|loudest|
+296,low,Adjective,|lower|lowest|
+297,loyal,Adjective,|loyal  more|loyal  most|
+298,lucky,Adjective,|lucky  more|lucky  most|
+299,male,Adjective,|||
+300,many,Adjective,|||
+301,mature,Adjective,|mature  more|mature  most|
+302,merciful,Adjective,|merciful  more|merciful  most|
+303,middle,Adjective,|||
+304,military,Adjective,|||
+305,millions,Adjective,|||
+306,miserable,Adjective,|miserable  more|miserable  most|
+307,more,Adjective,|||
+308,more than,Adjective,|||
+309,most,Adjective,|||
+310,much,Adjective,|||
+311,mute,Adjective,|mute  more|mute  most|
+312,naked,Adjective,|naked  more|naked  most|
+313,narrow,Adjective,|narrower|narrowest|
+314,new,Adjective,|newer|newest|
+315,next,Adjective,|||
+316,nine,Adjective,|||
+317,ninety,Adjective,|||
+318,ninth,Adjective,|||
+319,noble,Adjective,|nobler|noblest|
+320,noisy,Adjective,|noisier|noisiest|
+321,normal,Adjective,|normal  more|normal  most|
+322,northeastern,Adjective,|||
+323,northern,Adjective,|||
+324,northwestern,Adjective,|||
+325,old,Adjective,|older|oldest|
+326,one,Adjective,|||
+327,one and a half,Adjective,|||
+328,one eighth,Adjective,|||
+329,one fifth,Adjective,|||
+330,one fourth,Adjective,|||
+331,one half,Adjective,|||
+332,one hundred,Adjective,|||
+333,one tenth,Adjective,|||
+334,one third,Adjective,|||
+335,one thousand,Adjective,|||
+336,only,Adjective,|||
+337,only,Adjective,|||
+338,only,Adjective,|||
+339,open,Adjective,|open  more|open  most|
+340,ordinary,Adjective,|ordinarier|ordinariest|
+341,other,Adjective,|||
+342,overwhelmed,Adjective,|overwhelmed  more|overwhelmed  most|
+343,paralyzed,Adjective,|paralyzed  more|paralyzed  most|
+344,patient,Adjective,|patient  more|patient  most|
+345,peaceful,Adjective,|peaceful  more|peaceful  most|
+346,perfect,Adjective,|perfect  more|perfect  most|
+347,perverse,Adjective,|perverse  more|perverse  most|
+348,physical,Adjective,|||
+349,pleasant,Adjective,|pleasant  more|pleasant  most|
+350,pleased,Adjective,|pleased  more|pleased  most|
+351,poisonous,Adjective,|poisonous  more|poisonous  most|
+352,poor,Adjective,|poorer|poorest|
+353,possible,Adjective,|||
+354,powerful,Adjective,|powerful  more|powerful  most|
+355,precious,Adjective,|precious  more|precious  most|
+356,pregnant,Adjective,|pregnant  more|pregnant  most|
+357,previous,Adjective,|||
+358,prosperous,Adjective,|prosperous  more|prosperous  most|
+359,proud,Adjective,|prouder|proudest|
+360,prudent,Adjective,|prudent  more|prudent  most|
+361,public,Adjective,|public  more|public  most|
+362,pure,Adjective,|purer|purest|
+363,purple,Adjective,|||
+364,quiet,Adjective,|quiet  more|quiet  most|
+365,rainy,Adjective,|||
+366,raw,Adjective,|rawer|rawest|
+367,ready,Adjective,|readier|readiest|
+368,real,Adjective,|real  more|real  most|
+369,rebellious,Adjective,|rebellious  more|rebellious  most|
+370,red,Adjective,|redder|reddest|
+371,religious,Adjective,|religious  more|religious  most|
+372,responsible,Adjective,|responsible  more|responsible  most|
+373,rich,Adjective,|richer|richest|
+374,right,Adjective,|||
+375,righteous,Adjective,|righteous  more|righteous  most|
+376,ripe,Adjective,|riper|ripest|
+377,Roman,Adjective,|||
+378,rough,Adjective,|rougher|roughest|
+379,royal,Adjective,|||
+380,rude,Adjective,|ruder|rudest|
+381,sacred,Adjective,|sacred  more|sacred  most|
+382,sad,Adjective,|sadder|saddest|
+383,safe,Adjective,|safer|safest|
+384,same,Adjective,|||
+385,satisfied,Adjective,|satisfied  more|satisfied  most|
+386,scarlet,Adjective,|||
+387,second,Adjective,|||
+388,secret,Adjective,|||
+389,selfish,Adjective,|selfish  more|selfish  most|
+390,sensible,Adjective,|sensible  more|sensible  most|
+391,serious,Adjective,|serious  more|serious  most|
+392,seven,Adjective,|||
+393,seven and a half,Adjective,|||
+394,seventh,Adjective,|||
+395,seventy,Adjective,|||
+396,seventy-two,Adjective,|||
+397,several,Adjective,|||
+398,severe,Adjective,|severe  more|severe  most|
+399,shallow,Adjective,|shallower|shallowest|
+400,sharp,Adjective,|sharper|sharpest|
+401,shiny,Adjective,|shinier|shiniest|
+402,short,Adjective,|shorter|shortest|
+403,shriveled,Adjective,|shriveled  more|shriveled  most|
+404,sick,Adjective,|sicker|sickest|
+405,silent,Adjective,|silent  more|silent  most|
+406,similar,Adjective,|similar  more|similar  most|
+407,simple,Adjective,|simpler|simplest|
+408,sincere,Adjective,|sincere  more|sincere  most|
+409,sinful,Adjective,|sinful  more|sinful  most|
+410,six,Adjective,|||
+411,sixth,Adjective,|||
+412,sixty-two,Adjective,|||
+413,sleepy,Adjective,|sleepier|sleepiest|
+414,slow,Adjective,|slower|slowest|
+415,small,Adjective,|smaller|smallest|
+416,smooth,Adjective,|smoother|smoothest|
+417,soft,Adjective,|softer|softest|
+418,solid,Adjective,|solid  more|solid  most|
+419,some,Adjective,|||
+420,sore,Adjective,|sore  more|sore  most|
+421,sorry,Adjective,|sorry  more|sorry  most|
+422,sour,Adjective,|sour  more|sour  most|
+423,southern,Adjective,|||
+424,southwestern,Adjective,|||
+425,special,Adjective,|special  more|special  most|
+426,steep,Adjective,|steeper|steepest|
+427,straight,Adjective,|straighter|straightest|
+428,strange,Adjective,|stranger|strangest|
+429,strict,Adjective,|stricter|strictest|
+430,strong,Adjective,|stronger|strongest|
+431,stubborn,Adjective,|stubborn  more|stubborn  most|
+432,stupid,Adjective,|stupid  more|stupid  most|
+433,successful,Adjective,|successful  more|successful  most|
+434,sudden,Adjective,|||
+435,surprised,Adjective,|surprised  more|surprised  most|
+436,sweet,Adjective,|sweeter|sweetest|
+437,tall,Adjective,|taller|tallest|
+438,ten,Adjective,|||
+439,ten and a half,Adjective,|||
+440,tens,Adjective,|||
+441,tenth,Adjective,|||
+442,tenth,Adjective,|||
+443,terrible,Adjective,|terrible  more|terrible  most|
+444,terrified,Adjective,|terrified  more|terrified  most|
+445,thick,Adjective,|thicker|thickest|
+446,thin,Adjective,|thinner|thinnest|
+447,third,Adjective,|||
+448,thirsty,Adjective,|thirsty  more|thirsty  most|
+449,thirteenth,Adjective,|||
+450,thirty,Adjective,|||
+451,thirty-second,Adjective,|||
+452,thorny,Adjective,|thornier|thorniest|
+453,thousands,Adjective,|||
+454,three,Adjective,|||
+455,three and a half,Adjective,|||
+456,three hundred,Adjective,|||
+457,tired,Adjective,|tired  more|tired  most|
+458,top,Adjective,|||
+459,total,Adjective,|||
+460,traditional,Adjective,|||
+461,troubled,Adjective,|troubled  more|troubled  most|
+462,true,Adjective,|truer|truest|
+463,twelfth,Adjective,|||
+464,twelve,Adjective,|||
+465,twenty,Adjective,|||
+466,twenty-one,Adjective,|||
+467,twenty fifth,Adjective,|||
+468,twenty five,Adjective,|||
+469,two,Adjective,|||
+470,two tenths,Adjective,|||
+471,two thirds,Adjective,|||
+472,ugly,Adjective,|uglier|ugliest|
+473,unclean,Adjective,|unclean  more|unclean  most|
+474,unrighteous,Adjective,|unrighteous  more|unrighteous  most|
+475,upset,Adjective,|upset  more|upset  most|
+476,useful,Adjective,|useful  more|useful  most|
+477,useless,Adjective,|useless  more|useless  most|
+478,valuable,Adjective,|valuable  more|valuable  most|
+479,violent,Adjective,|violent  more|violent  most|
+480,warm,Adjective,|warmer|warmest|
+481,weak,Adjective,|weaker|weakest|
+482,weary,Adjective,|||
+483,well,Adjective,|weller|wellest|
+484,western,Adjective,|||
+485,wet,Adjective,|wetter|wettest|
+486,white,Adjective,|whiter|whitest|
+487,whole,Adjective,|||
+488,wicked,Adjective,|wicked  more|wicked  most|
+489,wide,Adjective,|wider|widest|
+490,wild,Adjective,|wilder|wildest|
+491,willing,Adjective,|willing  more|willing  most|
+492,wise,Adjective,|wiser|wisest|
+493,wonderful,Adjective,|wonderful  more|wonderful  most|
+494,worthless,Adjective,|worthless  more|worthless  most|
+495,worthy,Adjective,|worthy  more|worthy  most|
+496,wrong,Adjective,|||
+497,yellow,Adjective,|||
+498,young,Adjective,|younger|youngest|
+499,10th,Adjective,|||
+500,10,000,Adjective,|||
+501,105,Adjective,|||
+502,109,Adjective,|||
+503,11,Adjective,|||
+504,110,Adjective,|||
+505,114,Adjective,|||
+506,115,Adjective,|||
+507,119,Adjective,|||
+508,120,Adjective,|||
+509,12,000,Adjective,|||
+510,120,000,Adjective,|||
+511,127,Adjective,|||
+512,1,290,Adjective,|||
+513,13,Adjective,|||
+514,130,Adjective,|||
+515,133,Adjective,|||
+516,1,335,Adjective,|||
+517,135,Adjective,|||
+518,137,Adjective,|||
+519,14,Adjective,|||
+520,1.4,Adjective,|||
+521,140,Adjective,|||
+522,147,Adjective,|||
+523,1.5,Adjective,|||
+524,150,Adjective,|||
+525,15,000,Adjective,|||
+526,16,Adjective,|||
+527,1,600,Adjective,|||
+528,162,Adjective,|||
+529,17,Adjective,|||
+530,17th,Adjective,|||
+531,175,Adjective,|||
+532,180,Adjective,|||
+533,18,000,Adjective,|||
+534,182,Adjective,|||
+535,187,Adjective,|||
+536,19,Adjective,|||
+537,200,Adjective,|||
+538,2,000,Adjective,|||
+539,20,000,Adjective,|||
+540,200,000,Adjective,|||
+541,205,Adjective,|||
+542,207,Adjective,|||
+543,209,Adjective,|||
+544,21st,Adjective,|||
+545,22,Adjective,|||
+546,220,Adjective,|||
+547,22,000,Adjective,|||
+548,225,Adjective,|||
+549,2.25,Adjective,|||
+550,23,Adjective,|||
+551,23rd,Adjective,|||
+552,230,Adjective,|||
+553,2,300,Adjective,|||
+554,24th,Adjective,|||
+555,25,Adjective,|||
+556,25,000,Adjective,|||
+557,25,100,Adjective,|||
+558,26,000,Adjective,|||
+559,27,Adjective,|||
+560,27th,Adjective,|||
+561,2.8,Adjective,|||
+562,29,Adjective,|||
+563,3,Adjective,|||
+564,30,Adjective,|||
+565,3,000,Adjective,|||
+566,30,000,Adjective,|||
+567,300,000,Adjective,|||
+568,31,Adjective,|||
+569,318,Adjective,|||
+570,32,Adjective,|||
+571,3,200,Adjective,|||
+572,32,000,Adjective,|||
+573,33,Adjective,|||
+574,34,Adjective,|||
+575,345,Adjective,|||
+576,35,Adjective,|||
+577,350,Adjective,|||
+578,36,Adjective,|||
+579,360,Adjective,|||
+580,365,Adjective,|||
+581,37,Adjective,|||
+582,3.75,Adjective,|||
+583,38,Adjective,|||
+584,400,Adjective,|||
+585,4,000,Adjective,|||
+586,40,000,Adjective,|||
+587,400,000,Adjective,|||
+588,403,Adjective,|||
+589,42,Adjective,|||
+590,420,Adjective,|||
+591,42,000,Adjective,|||
+592,430,Adjective,|||
+593,434,Adjective,|||
+594,45,Adjective,|||
+595,450,Adjective,|||
+596,450,Adjective,|||
+597,48,Adjective,|||
+598,490,Adjective,|||
+599,500,Adjective,|||
+600,500,000,Adjective,|||
+601,575,Adjective,|||
+602,58,Adjective,|||
+603,595,Adjective,|||
+604,60,Adjective,|||
+605,600,Adjective,|||
+606,6,000,Adjective,|||
+607,600,000,Adjective,|||
+608,601,Adjective,|||
+609,65,Adjective,|||
+610,66,Adjective,|||
+611,68,Adjective,|||
+612,69,Adjective,|||
+613,70,Adjective,|||
+614,700,Adjective,|||
+615,7,000,Adjective,|||
+616,70,000,Adjective,|||
+617,72,Adjective,|||
+618,75,Adjective,|||
+619,7.5,Adjective,|||
+620,75,000,Adjective,|||
+621,77,Adjective,|||
+622,777,Adjective,|||
+623,782,Adjective,|||
+624,8,Adjective,|||
+625,80,Adjective,|||
+626,800,Adjective,|||
+627,800,000,Adjective,|||
+628,807,Adjective,|||
+629,815,Adjective,|||
+630,83,Adjective,|||
+631,830,Adjective,|||
+632,840,Adjective,|||
+633,85,Adjective,|||
+634,86,Adjective,|||
+635,895,Adjective,|||
+636,90,Adjective,|||
+637,900,Adjective,|||
+638,905,Adjective,|||
+639,910,Adjective,|||
+640,912,Adjective,|||
+641,930,Adjective,|||
+642,950,Adjective,|||
+643,962,Adjective,|||
+644,969,Adjective,|||
+645,98,Adjective,|||
+646,99,Adjective,|||

@@ -18,7 +18,7 @@ targets_db.exec('PRAGMA journal_mode = WAL')
 
 migrate_text_table(tbta_db, language, targets_db)
 migrate_lexicon_table(tbta_db, language, targets_db)
-migrate_lexical_forms(language, targets_db)
+await migrate_lexical_forms(language, targets_db)
 migrate_form_names_table(language, targets_db)
 migrate_lexical_features_table(language, targets_db)
 

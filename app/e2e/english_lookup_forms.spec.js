@@ -39,6 +39,29 @@ const test_data = [
 			{ stem: 'follow', part_of_speech: 'Verb', form: 'Third Singular Present' },
 		],
 	},
+	{
+		test_word: 'yes',
+		expected_forms: [
+			{ stem: 'yes', part_of_speech: 'Particle', form: 'Stem' },
+		],
+	},
+	{
+		test_word: '500',
+		expected_forms: [
+			{ stem: '500', part_of_speech: 'Adjective', form: 'Stem' },
+		],
+	},
+	{
+		test_word: 'am',
+		expected_forms: [],
+	},
+	{
+		test_word: ':',
+		expected_forms: [
+			{ stem: ':', part_of_speech: 'Particle', form: 'Stem' },
+			{ stem: ':', part_of_speech: 'Particle', form: 'Stem' },
+		],
+	},
 ]
 
 for (const { test_word, expected_forms } of test_data) {
