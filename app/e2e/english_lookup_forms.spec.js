@@ -62,6 +62,14 @@ const test_data = [
 			{ stem: ':', part_of_speech: 'Particle', form: 'Stem' },
 		],
 	},
+	{
+		test_word: 'tol*',
+		expected_forms: [
+			{ stem: 'Tola', part_of_speech: 'Noun', form: 'Stem' },
+			{ stem: 'tell', part_of_speech: 'Verb', form: 'Past' },
+			{ stem: 'tell', part_of_speech: 'Verb', form: 'Perfect' },
+		],
+	},
 ]
 
 for (const { test_word, expected_forms } of test_data) {
