@@ -80,7 +80,7 @@ async function load_data(word_forms, targets_db, language) {
 		for (const { stem: stem_from_word_forms, sequence_number, forms } of word_forms[part_of_speech]) {
 			const { id: lexicon_id, stem: stem_from_lexicon } = lexicon_words[sequence_number - 1]
 
-			if (! stem_from_word_forms.includes(stem_from_lexicon)) {
+			if (! stem_from_word_forms.startsWith(stem_from_lexicon)) {
 				console.log(`⚠️ NOT LOADED ⚠️ due to mismatch: ${stem_from_word_forms} (from word forms) vs ${stem_from_lexicon} (from lexicon)`)
 
 				continue
