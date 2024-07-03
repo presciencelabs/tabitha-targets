@@ -1,4 +1,5 @@
 type DbRowLexicon = {
+	id: number
 	project: string
 	stem: string
 	part_of_speech: string
@@ -9,6 +10,7 @@ type DbRowLexicon = {
 }
 
 type LexicalForm = {
+	id: number
 	stem: string
 	part_of_speech: string
 	form: string

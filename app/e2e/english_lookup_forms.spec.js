@@ -77,6 +77,6 @@ for (const { test_word, expected_forms } of test_data) {
 		const response = await request.get(`/English/lookup/forms?word=${test_word}`)
 		const returned_forms = await response.json()
 
-		expect(returned_forms).toEqual(expected_forms)
+		expect(returned_forms).toMatchObject(expected_forms)
 	})
 }

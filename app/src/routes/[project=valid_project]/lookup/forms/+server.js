@@ -38,13 +38,13 @@ export async function GET({ locals: { db }, params: { project }, url: { searchPa
 		/** @type {LexicalForm[]} */
 		let forms = []
 
-		for (const { stem: base_stem, part_of_speech, constituents } of stem_matches) {
+		for (const { id, stem: base_stem, part_of_speech, constituents } of stem_matches) {
 			const stem = derive_stem({ base_stem, constituents })
 
-			forms.push({ stem, part_of_speech, form: 'Stem' })
+			forms.push({ id, stem, part_of_speech, form: 'Stem' })
 		}
 
-		for (const { stem: base_stem, part_of_speech, constituents, forms: encoded_forms } of forms_matches) {
+		for (const { id, stem: base_stem, part_of_speech, constituents, forms: encoded_forms } of forms_matches) {
 			const stem = derive_stem({ base_stem, constituents })
 
 			// encoded_forms is a pipe-separated string
@@ -57,7 +57,7 @@ export async function GET({ locals: { db }, params: { project }, url: { searchPa
 			for (const i of matched_indices) {
 				const position = i + 1
 				const name = await get_form_name({ db, project, part_of_speech, position })
-				forms.push({ stem, part_of_speech, form: name })
+				forms.push({ id, stem, part_of_speech, form: name })
 			}
 		}
 
