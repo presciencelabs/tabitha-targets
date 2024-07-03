@@ -1,5 +1,5 @@
-export function migrate_lexicon_table(tbta_db, language, targets_db) {
-	const transformed_data = transform_tbta_data(tbta_db, language)
+export function migrate_lexicon_table(tbta_db, project, targets_db) {
+	const transformed_data = transform_tbta_data(tbta_db, project)
 
 	create_tabitha_table(targets_db)
 
@@ -7,7 +7,7 @@ export function migrate_lexicon_table(tbta_db, language, targets_db) {
 }
 
 /** @param {import('bun:sqlite').Database} tbta_db */
-function transform_tbta_data(tbta_db, language) {
+function transform_tbta_data(tbta_db, project) {
 	const table_names = [
 		'Adjectives',
 		'Adpositions',
@@ -30,7 +30,7 @@ function transform_tbta_data(tbta_db, language) {
 
 			const sql = `
 				SELECT 	ID as id,
-							'${language}' as language,
+							'${project}' as project,
 							Roots as stem,
 							'${singular_part_of_speech}' as part_of_speech,
 							Glosses as gloss,
@@ -62,7 +62,7 @@ function create_tabitha_table(targets_db) {
 		targets_db.query(`
 			CREATE TABLE IF NOT EXISTS Lexicon (
 				id					INTEGER,
-				language			TEXT,
+				project			TEXT,
 				stem				TEXT,
 				part_of_speech	TEXT,
 				gloss				TEXT,
@@ -88,11 +88,11 @@ function create_tabitha_table(targets_db) {
 function load_data(targets_db, transformed_data) {
 	console.log(`Loading data into Lexicon table...`)
 
-	transformed_data.map(async ({id, language, stem, part_of_speech, gloss, features, constituents}) => {
+	transformed_data.map(async ({id, project, stem, part_of_speech, gloss, features, constituents}) => {
 		targets_db.query(`
-			INSERT INTO Lexicon (id, language, stem, part_of_speech, gloss, features, constituents)
+			INSERT INTO Lexicon (id, project, stem, part_of_speech, gloss, features, constituents)
 			VALUES (?, ?, ?, ?, ?, ?, ?)
-		`).run(id, language, stem, part_of_speech, gloss.trim(), features, constituents)
+		`).run(id, project, stem, part_of_speech, gloss.trim(), features, constituents)
 
 		await Bun.write(Bun.stdout, '.')
 	})

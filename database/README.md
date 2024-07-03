@@ -2,7 +2,7 @@
 
 https://www.sqlite.org
 
-## Convert the target mdb's to a sqlite database
+## Convert the target mdb to a sqlite database
 
 1. currently using a manual process, i.e., TBTA's `*.mdb` -> Google Drive -> MDB Viewer app -> download sqlite file (`*.YYYY-MM-DD.mdb.sqlite`)
 

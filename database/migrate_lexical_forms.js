@@ -1,14 +1,14 @@
 import {readdir} from 'node:fs/promises'
 
 /**
- * @param {string} language
+ * @param {string} project
  * @param {import('bun:sqlite').Database} targets_db
  * @returns {Promise<void>}
  */
-export async function migrate_lexical_forms(language, targets_db) {
+export async function migrate_lexical_forms(project, targets_db) {
 	const word_forms = await get_word_forms()
 
-	await load_data(word_forms, targets_db, language)
+	await load_data(word_forms, targets_db, project)
 }
 
 /**
@@ -67,12 +67,12 @@ async function get_word_forms() {
  *
  * @param {Record<['Adjective'|'Adverb'|'Noun'|'Verb'], WordFormRecord[]>} word_forms
  * @param {import('bun:sqlite').Database} targets_db
- * @param {string} language
+ * @param {string} project
  * @returns {Promise<void>}
  *
  * @typedef {{
  * 	id: number,
- * 	language: string,
+ * 	project: string,
  * 	stem: string,
  * 	part_of_speech: string,
  * 	gloss: string,
@@ -81,7 +81,7 @@ async function get_word_forms() {
  * 	forms: string
  * }} LexiconRecord
  */
-async function load_data(word_forms, targets_db, language) {
+async function load_data(word_forms, targets_db, project) {
 	console.log(`Loading word forms into Lexicon table...`)
 
 	for (const part_of_speech of Object.keys(word_forms)) {
@@ -89,10 +89,10 @@ async function load_data(word_forms, targets_db, language) {
 		const lexicon_words = targets_db.query(`
 			SELECT *
 			FROM Lexicon
-			WHERE language = ?
+			WHERE project = ?
 				AND part_of_speech = ?
 			ORDER BY id
-		`).all(language, part_of_speech)
+		`).all(project, part_of_speech)
 
 		for (const from_word_forms of word_forms[part_of_speech]) {
 			const from_lexicon = lexicon_words[from_word_forms.sequence_number - 1]
@@ -101,10 +101,10 @@ async function load_data(word_forms, targets_db, language) {
 				await targets_db.query(`
 					UPDATE Lexicon
 					SET forms = ?
-					WHERE language = ?
+					WHERE project = ?
 						AND part_of_speech = ?
 						AND id = ?
-				`).run(from_word_forms.forms, language, part_of_speech, from_lexicon.id)
+				`).run(from_word_forms.forms, project, part_of_speech, from_lexicon.id)
 			} else {
 				console.log(`⚠️ NOT LOADED ⚠️ due to mismatch: ${from_word_forms.stem} (from word forms) vs ${from_lexicon.stem} (from lexicon)`)
 			}

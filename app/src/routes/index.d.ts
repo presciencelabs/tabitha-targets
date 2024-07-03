@@ -1,3 +1,3 @@
-type LanguageResult = {
-	language: string
+type ProjectResult = {
+	project: string
 }

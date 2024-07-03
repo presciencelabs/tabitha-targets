@@ -1,7 +1,7 @@
-export function migrate_form_names_table(language, targets_db) {
+export function migrate_form_names_table(project, targets_db) {
 	create_tabitha_table(targets_db)
 
-	load_data(targets_db, language)
+	load_data(targets_db, project)
 }
 
 /** @param {import('bun:sqlite').Database} targets_db */
@@ -17,7 +17,7 @@ function create_tabitha_table(targets_db) {
 
 		targets_db.query(`
 			CREATE TABLE IF NOT EXISTS Form_Names (
-				language			TEXT,
+				project			TEXT,
 				part_of_speech	TEXT,
 				name				TEXT,
 				position			INTEGER
@@ -37,19 +37,19 @@ function create_tabitha_table(targets_db) {
 }
 
 /** @param {import('bun:sqlite').Database} targets_db */
-function load_data(targets_db, language) {
+function load_data(targets_db, project) {
 	console.log(`Loading data into Form_Names table...`)
 
 	const data = [
-		[language, 'Noun', 'Plural', 1],
-		[language, 'Verb', 'Past', 1],
-		[language, 'Verb', 'Perfect', 2],
-		[language, 'Verb', 'Participle', 3],
-		[language, 'Verb', 'Third Singular Present', 4],
-		[language, 'Adjective', 'Comparative', 1],
-		[language, 'Adjective', 'Superlative', 2],
-		[language, 'Adverb', 'Comparative', 1],
-		[language, 'Adverb', 'Superlative', 2]
+		[project, 'Noun', 'Plural', 1],
+		[project, 'Verb', 'Past', 1],
+		[project, 'Verb', 'Perfect', 2],
+		[project, 'Verb', 'Participle', 3],
+		[project, 'Verb', 'Third Singular Present', 4],
+		[project, 'Adjective', 'Comparative', 1],
+		[project, 'Adjective', 'Superlative', 2],
+		[project, 'Adverb', 'Comparative', 1],
+		[project, 'Adverb', 'Superlative', 2]
 	]
 
 	data.map(row => targets_db.query('INSERT INTO Form_Names VALUES (?, ?, ?, ?)').run(...row))

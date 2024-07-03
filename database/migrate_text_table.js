@@ -1,9 +1,9 @@
-export function migrate_text_table(tbta_db, language, targets_db) {
+export function migrate_text_table(tbta_db, project, targets_db) {
 	const transformed_data = transform_tbta_data(tbta_db)
 
 	create_tabitha_table(targets_db)
 
-	load_data(targets_db, language, transformed_data)
+	load_data(targets_db, project, transformed_data)
 }
 
 /** @param {import('bun:sqlite').Database} tbta_db */
@@ -74,7 +74,7 @@ function create_tabitha_table(targets_db) {
 
 		targets_db.query(`
 			CREATE TABLE IF NOT EXISTS Text (
-				language	TEXT,
+				project	TEXT,
 				book 		TEXT,
 				chapter 	INTEGER,
 				verse 	INTEGER,
@@ -95,14 +95,14 @@ function create_tabitha_table(targets_db) {
 }
 
 /** @param {import('bun:sqlite').Database} targets_db */
-function load_data(targets_db, language, transformed_data) {
+function load_data(targets_db, project, transformed_data) {
 	console.log(`Loading data into Text table...`)
 
 	transformed_data.map(async ({book, chapter, verse, text}) => {
 		targets_db.query(`
-			INSERT INTO Text (language, book, chapter, verse, text)
+			INSERT INTO Text (project, book, chapter, verse, text)
 			VALUES (?, ?, ?, ?, ?)
-		`).run(language, book, chapter, verse, text)
+		`).run(project, book, chapter, verse, text)
 
 		await Bun.write(Bun.stdout, '.')
 	})
