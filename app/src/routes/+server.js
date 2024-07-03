@@ -6,7 +6,7 @@ export async function GET({ locals: { db } }) {
 	// https://www.sqlite.org/lang_expr.html#the_like_glob_regexp_match_and_extract_operators
 	const sql = `
 		SELECT DISTINCT language
-		FROM Form_Names
+		FROM Lexicon
 	`
 
 	/** @type {import('@cloudflare/workers-types').D1Result<LanguageResult>} https://developers.cloudflare.com/d1/platform/client-api/#return-object */
