@@ -19,10 +19,10 @@ function create_tabitha_table(targets_db) {
 			CREATE TABLE IF NOT EXISTS Lexical_Features (
 				language			TEXT,
 				part_of_speech	TEXT,
-				name				TEXT,
+				feature			TEXT,
 				position			INTEGER,
 				code				TEXT,
-				label				TEXT,
+				value				TEXT,
 				notes				TEXT
 			)
 		`).run()
