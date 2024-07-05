@@ -20,7 +20,7 @@ migrate_text_table(tbta_db, project, targets_db)
 migrate_lexicon_table(tbta_db, project, targets_db)
 await migrate_lexical_forms(project, targets_db)
 migrate_form_names_table(project, targets_db)
-migrate_lexical_features_table(project, targets_db)
+migrate_lexical_features_table(tbta_db, project, targets_db)
 
 console.log(`Optimizing ${targets_db_name}...`)
 targets_db.query(`VACUUM`).run()
