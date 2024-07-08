@@ -41,9 +41,9 @@ function transform_tbta_data(tbta_db) {
 
 		const sql = `
 		  SELECT	SyntacticName as part_of_speech,
-					  FeatureName as feature,
-					  FeatureValues as encoded_values,
-					  Comment as notes
+					FeatureName as feature,
+					FeatureValues as encoded_values,
+					Comment as notes
 
 		  FROM	Features_Target
 			  INNER JOIN	SyntacticCategories
@@ -152,7 +152,6 @@ function create_tabitha_table(targets_db) {
 }
 
 /**
- *
  * @param {import('bun:sqlite').Database} targets_db
  * @param {string} project
  * @param {TransformedData[]} transformed_data
@@ -160,7 +159,6 @@ function create_tabitha_table(targets_db) {
 function load_data(targets_db, project, transformed_data) {
 	console.log(`Loading data into Lexical_Features table...`)
 
-	// transformed_data.map(row => targets_db.query('INSERT INTO Lexical_Features VALUES (?, ?, ?, ?, ?, ?, ?)').run(project, ...row))
 	transformed_data.map(async ({part_of_speech, feature, position, code, value, notes}) => {
 		targets_db.query(`
 			INSERT INTO Lexical_Features (project, part_of_speech, feature, position, code, value, notes)
