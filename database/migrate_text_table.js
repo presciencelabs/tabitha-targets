@@ -63,35 +63,21 @@ function transform_tbta_data(tbta_db) {
 
 /** @param {import('bun:sqlite').Database} targets_db */
 function create_tabitha_table(targets_db) {
-	create()
+	console.log(`Creating Text table in ${targets_db.filename}...`)
 
-	empty_existing_table()
+	targets_db.query(`
+		CREATE TABLE IF NOT EXISTS Text (
+			project	TEXT,
+			book 		TEXT,
+			chapter 	INTEGER,
+			verse 	INTEGER,
+			text 		TEXT
+		)
+	`).run()
+
+	console.log('done.')
 
 	return targets_db
-
-	function create() {
-		console.log(`Creating Text table in ${targets_db.filename}...`)
-
-		targets_db.query(`
-			CREATE TABLE IF NOT EXISTS Text (
-				project	TEXT,
-				book 		TEXT,
-				chapter 	INTEGER,
-				verse 	INTEGER,
-				text 		TEXT
-			)
-		`).run()
-
-		console.log('done.')
-	}
-
-	function empty_existing_table() {
-		console.log(`Cleaning existing data in Text...`)
-
-		targets_db.query(`DELETE FROM Text`).run()
-
-		console.log('done.')
-	}
 }
 
 /** @param {import('bun:sqlite').Database} targets_db */

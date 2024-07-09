@@ -50,38 +50,24 @@ function transform_tbta_data(tbta_db, project) {
 
 /** @param {import('bun:sqlite').Database} targets_db */
 function create_tabitha_table(targets_db) {
-	create()
+	console.log(`Creating Lexicon table in ${targets_db.filename}...`)
 
-	empty_existing_table()
+	targets_db.query(`
+		CREATE TABLE IF NOT EXISTS Lexicon (
+			id					INTEGER,
+			project			TEXT,
+			stem				TEXT,
+			part_of_speech	TEXT,
+			gloss				TEXT,
+			features			TEXT,
+			constituents	TEXT,
+			forms				TEXT
+		)
+	`).run()
+
+	console.log('done.')
 
 	return targets_db
-
-	function create() {
-		console.log(`Creating Lexicon table in ${targets_db.filename}...`)
-
-		targets_db.query(`
-			CREATE TABLE IF NOT EXISTS Lexicon (
-				id					INTEGER,
-				project			TEXT,
-				stem				TEXT,
-				part_of_speech	TEXT,
-				gloss				TEXT,
-				features			TEXT,
-				constituents	TEXT,
-				forms				TEXT
-			)
-		`).run()
-
-		console.log('done.')
-	}
-
-	function empty_existing_table() {
-		console.log(`Cleaning existing data in Lexicon...`)
-
-		targets_db.query(`DELETE FROM Lexicon`).run()
-
-		console.log('done.')
-	}
 }
 
 /** @param {import('bun:sqlite').Database} targets_db */

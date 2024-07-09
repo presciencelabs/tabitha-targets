@@ -118,37 +118,23 @@ function transform_tbta_data(tbta_db) {
 
 /** @param {import('bun:sqlite').Database} targets_db */
 function create_tabitha_table(targets_db) {
-	create()
+	console.log(`Creating Lexical_Features table in ${targets_db.filename}...`)
 
-	empty_existing_table()
+	targets_db.query(`
+		CREATE TABLE IF NOT EXISTS Lexical_Features (
+			project			TEXT,
+			part_of_speech	TEXT,
+			feature			TEXT,
+			position			INTEGER,
+			code				TEXT,
+			value				TEXT,
+			notes				TEXT
+		)
+	`).run()
+
+	console.log('done.')
 
 	return targets_db
-
-	function create() {
-		console.log(`Creating Lexical_Features table in ${targets_db.filename}...`)
-
-		targets_db.query(`
-			CREATE TABLE IF NOT EXISTS Lexical_Features (
-				project			TEXT,
-				part_of_speech	TEXT,
-				feature			TEXT,
-				position			INTEGER,
-				code				TEXT,
-				value				TEXT,
-				notes				TEXT
-			)
-		`).run()
-
-		console.log('done.')
-	}
-
-	function empty_existing_table() {
-		console.log(`Cleaning existing data in Lexical_Features...`)
-
-		targets_db.query(`DELETE FROM Lexical_Features`).run()
-
-		console.log('done.')
-	}
 }
 
 /**
