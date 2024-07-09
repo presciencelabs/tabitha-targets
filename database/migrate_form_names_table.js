@@ -61,7 +61,7 @@ function transform_tbta_data(tbta_db) {
 		const transformed_data = extracted_data.map(({part_of_speech, name, FieldName}) => ({
 			part_of_speech,
 			name,
-			position: FieldName.at(-1), // FieldName pattern:  "Form Name 1", "Form Name 2", etc.
+			position: FieldName.match(/(\d+)/)[1], // FieldName pattern:  "Form Name 1", "Form Name 2", etc.
 		}))
 
 		console.log('done.')
