@@ -94,7 +94,7 @@ export async function GET({ locals: { db }, params: { project }, url: { searchPa
 
 		/** @param {string} form */
 		function is_match(form) {
-			// need a case-insensitive match, e.g., xword=People, it should match the form=people
+			// need a case-insensitive match, e.g., word=People, it should match the form=people
 			if (form.toLowerCase() === word.toLowerCase()) {
 				return true
 			}
