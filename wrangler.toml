@@ -6,5 +6,5 @@ command = "pnpm build"
 
 [[d1_databases]]
 binding = "DB_Targets"
-database_name = "Targets.2024-07-03"
-database_id = "d4867df9-9e5f-42ae-b065-69dfaec7d376"
+database_name = "Targets.2024-08-14"
+database_id = "63ffaa25-bf0e-42dc-9c7f-b10332bf9468"
