@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/state'
+	import Icon from '@iconify/svelte'
 
 	/** @type {string} */
 	export let project
@@ -18,6 +19,7 @@
 
 		<button type="submit" class="btn btn-primary btn-lg join-item">
 			<span class="hidden sm:inline">Search</span>
+			<Icon icon="material-symbols:search" class="h-6 w-6" />
 		</button>
 	</form>
 </search>
