@@ -35,10 +35,10 @@
 		}
 	}
 
-	$: filters = derive_filters(matches)
-
 	/** @type {Record<string, string>}*/
 	$: selected_filters = {}
+
+	$: filters = derive_filters(matches)
 
 	$: filtered_results = apply_filters(matches, selected_filters)
 
@@ -52,11 +52,15 @@
 		const book_names_found_in_examples = [...new Set(results.sort(by_book_order).map(result => result.reference.id_primary))]
 		filters.set('Book', ['Any', ...book_names_found_in_examples])
 
-		const audiences_found_in_examples = [...new Set(results.flatMap(result => result.texts.map(t => t.audience)))]
+		const audiences_found_in_examples = [...new Set(results.flatMap(result => result.texts.map(t => t.audience)))].sort()
 		if (audiences_found_in_examples.length > 1) {
 			filters.set('Audience', ['Any', ...audiences_found_in_examples])
 		} else {
-			filters.set('Audience', [...audiences_found_in_examples])
+			filters.set('Audience', audiences_found_in_examples)
+		}
+
+		for (const [name, options] of filters) {
+			selected_filters[name] = options[0]
 		}
 
 		return filters
@@ -96,10 +100,8 @@
 	 */
 	function by_book_order({ reference: { id_primary: book_name_1 } }, { reference: { id_primary: book_name_2 } }) {
 		const books_in_order = Object.values(bible_books)
-
 		const index_1 = books_in_order.indexOf(book_name_1)
 		const index_2 = books_in_order.indexOf(book_name_2)
-
 		return index_1 - index_2
 	}
 </script>
@@ -112,7 +114,7 @@
 	</em>
 </header>
 
-<aside class="pt-4">(Click a verse to view its semantic representation.)</aside>
+<aside class="pt-4 invisible" class:visible={searched}>(Click a verse to view its semantic representation.)</aside>
 
 <section class="join join-vertical invisible pt-2 w-full" class:visible={searched}>
 	<form class="join gap-4 bg-info text-info-content px-4 pb-4 overflow-x-auto join-item">
@@ -121,10 +123,8 @@
 				<span class="text-info-content label py-1">{name}</span>
 
 				<select bind:value={selected_filters[name]} class="select text-base-content">
-					{#each options as option, i}
-						{@const is_first_option = i === 0}
-
-						<option value={option} selected={is_first_option}>{option}</option>
+					{#each options as option}
+						<option value={option}>{option}</option>
 					{/each}
 				</select>
 			</label>
