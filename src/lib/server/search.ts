@@ -9,9 +9,10 @@ export async function search_text(db: D1Database, project: string, q: string) {
 		WHERE project = ? AND text LIKE ?
 	`
 
-	const wildcard_q = normalized_q.includes('%') ? normalized_q : `%${normalized_q}%`
+	// Remove wildcards around the query, as they will be added back in by default
+	const trimmed_q = normalized_q.replace(/^%|%$/g, '')
 
-	const { results: matches } = await db.prepare(query).bind(project, wildcard_q).all<DbTextResult>()
+	const { results: matches } = await db.prepare(query).bind(project, `%${trimmed_q}%`).all<DbTextResult>()
 
 	return transform(matches)
 

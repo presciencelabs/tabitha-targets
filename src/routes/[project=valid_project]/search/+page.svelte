@@ -13,7 +13,7 @@
 
 	$: search_term = data.search_term
 	$: searched = !!search_term.length
-	$: SEARCH_TERM_REGEX = new RegExp(`(${search_term.toLowerCase()})`, 'gi')
+	$: SEARCH_TERM_REGEX = new RegExp(`(${search_term.toLowerCase().replaceAll(/[%#*]/g, '.*?')})`, 'gi')
 
 	const FADE_CHARACTERISTICS = {
 		delay: 100,
