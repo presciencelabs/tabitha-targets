@@ -66,5 +66,4 @@ export const bible_books = {
 	64: '3 John',
 	65: 'Jude',
 	66: 'Revelation',
-	67: 'Revelations', //TODO: this can be removed once TBTA's Bible.mdb.Revelations table name is fixed
 }

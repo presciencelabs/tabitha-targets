@@ -20,19 +20,14 @@
 		duration: 700,
 	}
 
-		/** @type { number[] } */
-	let retrieval_queue = []
+	/** @type { boolean[] } */
+	let collapse_states = []
 
 	/**
-	 * @param { Event & { currentTarget: HTMLDetailsElement }} event
-	 * @param { number } id
+	 * @param {number} id
 	 */
-	function handle_queue({ currentTarget: details }, id) {
-		if (details.open) {
-			retrieval_queue = [...retrieval_queue, id]
-		} else {
-			retrieval_queue = retrieval_queue.filter(queued_id => queued_id !== id)
-		}
+	function toggle_collapse(id) {
+		collapse_states[id] = !collapse_states[id]
 	}
 
 	/** @type {Record<string, string>}*/
@@ -71,7 +66,9 @@
 	 * @param {Record<string, string>} filters
 	 */
 	function apply_filters(results, filters) {
-		return results.filter(is_a_match)
+		const filtered_results = results.filter(is_a_match)
+		collapse_states = filtered_results.map(_ => false)
+		return filtered_results
 
 		/** @param { SearchTextResult } result */
 		function is_a_match(result) {
@@ -114,8 +111,6 @@
 	</em>
 </header>
 
-<aside class="pt-4 invisible" class:visible={searched}>(Click a verse to view its semantic representation.)</aside>
-
 <section class="join join-vertical invisible pt-2 w-full" class:visible={searched}>
 	<form class="join gap-4 bg-info text-info-content px-4 pb-4 overflow-x-auto join-item">
 		{#each filters as [name, options]}
@@ -147,8 +142,8 @@
 		{@const { id_primary, id_secondary, id_tertiary } = result.reference}
 		{@const filtered_audiences = result.texts.filter(t => selected_filters['Audience'] === 'Any' ? true : selected_filters['Audience'] === t.audience)}
 
-		<details on:toggle={event => handle_queue(event, i)} transition:fade={FADE_CHARACTERISTICS} class="collapse collapse-arrow bg-base-100 overflow-visible">
-			<summary class="collapse-title border border-base-200">
+		<details transition:fade={FADE_CHARACTERISTICS} open={collapse_states[i]} class="collapse collapse-arrow bg-base-100 overflow-visible">
+			<summary on:click|preventDefault={_ => toggle_collapse(i)} class="collapse-title border border-base-200 hover:bg-base-200">
 				<section class="flex">
 					<span class="min-w-1/8 w-1/8 flex-shrink-0 whitespace-nowrap font-semibold">
 						{id_primary} {id_secondary}:{id_tertiary}
@@ -158,12 +153,12 @@
 						{#each filtered_audiences as { text, audience }}
 							<p class="mb-1">
 								<span class="font-semibold">({audience})</span>
-								{#each text.split(SEARCH_TERM_REGEX) as run, i}
+								{#each text.split(SEARCH_TERM_REGEX) as t, i}
 									<!--When splitting on the search term, every other item is the search term-->
 									{#if i % 2 === 0}
-										{run}
+										{t}
 									{:else}
-										<span class="font-semibold italic">{run}</span>
+										<span class="font-semibold italic">{t}</span>
 									{/if}
 								{/each}
 							</p>
@@ -173,7 +168,7 @@
 			</summary>
 
 			<section class="collapse-content flex">
-				{#if retrieval_queue.includes(i)}
+				{#if collapse_states[i]}
 					<div class="min-w-1/8 w-1/8"><!--Empty just to fill the same space as the verse reference--></div>
 					<div class="w-7/8">
 						<SourceData reference={result.reference} />
