@@ -1,6 +1,6 @@
 type DbRowFeature = {
 	project: string
-	part_of_speech: string
+	category: string
 	feature: string
 	position: number
 	code: string
@@ -8,8 +8,7 @@ type DbRowFeature = {
 }
 
 type ApiFeature = {
-	type: 'source' | 'lexical'
-	part_of_speech: string
+	category: string
 	feature: string
 	position: number
 	code: string
