@@ -3,9 +3,11 @@ import { json } from '@sveltejs/kit'
 /** @type {import('./$types').RequestHandler} */
 export async function GET({ locals: { db }, params: { project }, url: { searchParams } }) {
 	// targets.tabitha.bible/English/lookup/features
-	// TODO: targets.tabitha.bible/English/lookup/features?category=Noun
+	// targets.tabitha.bible/English/lookup/features?category=Noun
 	// TODO: targets.tabitha.bible/English/lookup/features?category=Noun&position=2
 	// TODO: targets.tabitha.bible/English/lookup/features?category=Noun&position=2&code=P
+	/** @type {CategoryName} */
+	const category = searchParams.get('category')?.toLowerCase() ?? ''
 
 	const lexical_sql = `
 		SELECT *
@@ -25,21 +27,24 @@ export async function GET({ locals: { db }, params: { project }, url: { searchPa
 	const { results: source_features } = await db.prepare(source_sql).bind(project).all()
 
 	return json({
-		source: transform(source_features),
-		lexical: transform(lexical_features),
+		source: transform(source_features, category),
+		lexical: transform(lexical_features, category),
 	})
 }
 
 /**
  * @param {DbRowFeature[]} features 
+ * @param {CategoryName} category
  * @returns {ApiFeature[]}
  */
-function transform(features) {
-	return features.map(({ category, feature, position, code, value }) => ({
-		category,
-		feature,
-		position,
-		code,
-		value,
-	}))
+function transform(features, category) {
+	return features
+		.filter(f => !category.length || f.category.toLowerCase() === category)
+		.map(({ category, feature, position, code, value }) => ({
+			category,
+			feature,
+			position,
+			code,
+			value,
+		}))
 }
