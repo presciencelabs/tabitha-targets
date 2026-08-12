@@ -13,15 +13,19 @@
 		if (entity.value === '{') {
 			clauses.push([])
 		}
-		clauses.at(-1)?.push(entity)
+
+		const last_clause = clauses[clauses.length - 1]
+		if (last_clause) {
+			last_clause.push(entity)
+		}
+
 		return clauses
 	}
 
 	function get_component(entity: SourceEntity) {
 		if (['{', '[', '('].includes(entity.value)) return BoundaryStart
 		if (['}', ']', ')'].includes(entity.value)) return BoundaryEnd
-		if (entity.concept) return Word
-		return Punctuation
+		return entity.concept ? Word : Punctuation
 	}
 </script>
 
