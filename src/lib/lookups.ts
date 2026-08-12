@@ -1,5 +1,4 @@
-
-export const bible_books = {
+export const bible_books: Record<number, string> = {
 	1: 'Genesis',
 	2: 'Exodus',
 	3: 'Leviticus',

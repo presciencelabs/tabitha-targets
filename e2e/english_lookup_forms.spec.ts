@@ -1,6 +1,4 @@
-// https://playwright.dev/docs/writing-tests#first-test
-// @ts-check
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 const test_data = [
 	{

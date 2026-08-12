@@ -7,3 +7,5 @@ export {
 	Search,
 	SourceData,
 }
+
+export * from './types'
