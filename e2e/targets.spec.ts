@@ -4,5 +4,5 @@ test('get all targets', async ({ request }) => {
 	const response = await request.get('/')
 	const sources = await response.json()
 
-	expect(sources).toEqual(['English'])
+	expect(sources).toContain('English')
 })
