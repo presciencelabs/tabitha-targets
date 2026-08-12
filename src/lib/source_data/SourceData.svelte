@@ -1,28 +1,17 @@
-<script>
+<script lang="ts">
 	import { PUBLIC_SOURCES_API_HOST } from '$env/static/public'
 	import SourceEntities from './SourceEntities.svelte'
 	import Icon from '@iconify/svelte'
+	import type { SourceData, SourceReference } from '$lib/types'
 
-	/** @type {SourceReference} */
-	export let reference
+	let { reference }: { reference: SourceReference } = $props()
 
-	/**
-	 * @param {SourceReference} reference
-	 *
-	 * @returns {Promise<SourceData>}
-	 */
-	async function get_source_data(reference) {
-		const response = await fetch(get_sources_url(reference))
-
+	async function get_source_data(ref: SourceReference): Promise<SourceData> {
+		const response = await fetch(get_sources_url(ref))
 		return await response.json()
 	}
 
-	/**
-	 * @param {SourceReference} reference
-	 *
-	 * @returns {string} fully-qualified URL to the sources API
-	 */
-	function get_sources_url({ type, id_primary, id_secondary, id_tertiary }) {
+	function get_sources_url({ type, id_primary, id_secondary, id_tertiary }: SourceReference): string {
 		return `${PUBLIC_SOURCES_API_HOST}/${type}/${id_primary}/${id_secondary}/${id_tertiary}`
 	}
 </script>
@@ -30,7 +19,7 @@
 <h4 class="flex justify-between">
 	Semantic encoding (Phase 2)
 
-	<a href={get_sources_url(reference)} target="_blank" class="link link-accent link-hover text-sm flex items-end">
+	<a href={get_sources_url(reference)} target="_blank" rel="noreferrer" class="link link-accent link-hover text-sm flex items-end">
 		all source details
 		<Icon icon="fe:link-external" class="h-6 w-6" />
 	</a>

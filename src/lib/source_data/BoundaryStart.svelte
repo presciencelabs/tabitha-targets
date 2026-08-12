@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import Features from './Features.svelte'
+	import type { SourceEntity } from '$lib/types'
 
-	/** @type {SourceEntity} */
-	export let source_entity
+	let { source_entity }: { source_entity: SourceEntity } = $props()
 </script>
 
 <span class="inline-flex pe-1 tracking-widest">

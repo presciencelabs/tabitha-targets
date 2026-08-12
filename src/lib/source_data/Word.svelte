@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Features from './Features.svelte'
 	import Concept from './Concept.svelte'
+	import type { SourceEntity } from '$lib/types'
 
-	export let source_entity: SourceEntity
+	let { source_entity }: { source_entity: SourceEntity } = $props()
 
-	const concept = source_entity.concept!	// will always be non-null at this point
+	let concept = $derived(source_entity.concept!)
 </script>
 
 <span class="inline-flex px-1 tracking-normal">
