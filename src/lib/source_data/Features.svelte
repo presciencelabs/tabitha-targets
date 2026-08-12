@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte'
-	import type { EntityFeature, SourceEntity } from '$lib/types'
+	import type { SourceEntity } from '$lib/types'
+	import { get_features_to_display } from './features_helpers'
 
 	let {
 		source_entity,
@@ -16,10 +17,6 @@
 	let features = $derived(source_entity.features ?? [])
 
 	let features_to_display = $derived(features.filter(get_features_to_display))
-
-	function get_features_to_display({ value }: EntityFeature): boolean {
-		return !(value === 'No' || ['Un', 'No ', 'Not '].some(prefix => value.startsWith(prefix)))
-	}
 </script>
 
 {#if features.length}
