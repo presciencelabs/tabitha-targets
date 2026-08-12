@@ -10,10 +10,9 @@
 
 <span class="inline-flex px-1 tracking-normal">
 	<Features {source_entity}>
-		{#if source_entity.pairing_concept === null}
-			<Concept data={concept} />
-		{:else}
-			<Concept data={concept} />/<Concept data={source_entity.pairing_concept} />
+		<Concept data={concept} />
+		{#if source_entity.pairing_concept}
+			/<Concept data={source_entity.pairing_concept} />
 		{/if}
 	</Features>
 </span>
