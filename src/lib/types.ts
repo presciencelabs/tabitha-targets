@@ -15,11 +15,14 @@ export type SourceConcept = {
 	sense: string
 }
 
+/** A positional string of character codes straight from the source encoding (e.g., '4A4SDAnS3NN') */
+export type FeatureCodeString = string
+
 export type SourceEntity = {
 	value: string
 	category: string
 	category_abbr: string
-	feature_codes: string[]
+	feature_codes: FeatureCodeString
 	features: EntityFeature[]
 	concept: SourceConcept | null
 	pairing_concept: SourceConcept | null

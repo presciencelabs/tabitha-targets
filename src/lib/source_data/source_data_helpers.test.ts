@@ -18,7 +18,7 @@ describe('source_data_helpers', () => {
 	it('fetches source data with mocked fetch', async () => {
 		const mockResponseData = {
 			parsed_semantic_encoding: [
-				{ value: '{', category: 'Clause', category_abbr: 'C', feature_codes: [] },
+				{ value: '{', category: 'Clause', category_abbr: 'C', feature_codes: '' },
 			],
 		}
 

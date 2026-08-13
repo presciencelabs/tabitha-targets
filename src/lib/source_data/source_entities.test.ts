@@ -19,7 +19,7 @@ function createMockEntity(overrides: Partial<SourceEntity>): SourceEntity {
 		value: '',
 		category: 'Clause',
 		category_abbr: 'C',
-		feature_codes: [],
+		feature_codes: '',
 		features: [],
 		concept: null,
 		pairing_concept: null,
@@ -28,12 +28,12 @@ function createMockEntity(overrides: Partial<SourceEntity>): SourceEntity {
 }
 
 const mockEntities: SourceEntity[] = [
-	createMockEntity({ value: '{', category: 'Clause', category_abbr: 'C', feature_codes: ['1', '2'] }),
-	createMockEntity({ value: 'David', category: 'Noun Phrase', category_abbr: 'NP', feature_codes: ['1', 'Agent'], concept: { stem: 'David', sense: '1' } }),
-	createMockEntity({ value: '}', category: 'Clause', category_abbr: 'C', feature_codes: ['1', '2'] }),
-	createMockEntity({ value: '{', category: 'Clause', category_abbr: 'C', feature_codes: ['1', '2'] }),
-	createMockEntity({ value: 'went', category: 'Verb Phrase', category_abbr: 'VP', feature_codes: ['1', '2'], concept: { stem: 'go', sense: '1' } }),
-	createMockEntity({ value: '}', category: 'Clause', category_abbr: 'C', feature_codes: ['1', '2'] }),
+	createMockEntity({ value: '{', category: 'Clause', category_abbr: 'C', feature_codes: '12' }),
+	createMockEntity({ value: 'David', category: 'Noun Phrase', category_abbr: 'NP', feature_codes: '1Agent', concept: { stem: 'David', sense: '1' } }),
+	createMockEntity({ value: '}', category: 'Clause', category_abbr: 'C', feature_codes: '12' }),
+	createMockEntity({ value: '{', category: 'Clause', category_abbr: 'C', feature_codes: '12' }),
+	createMockEntity({ value: 'went', category: 'Verb Phrase', category_abbr: 'VP', feature_codes: '12', concept: { stem: 'go', sense: '1' } }),
+	createMockEntity({ value: '}', category: 'Clause', category_abbr: 'C', feature_codes: '12' }),
 ]
 
 describe('SourceEntities clause reducer', () => {
